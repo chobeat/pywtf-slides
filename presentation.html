@@ -259,10 +259,109 @@ layout:true
 template: scale-4
 name: setuptools
 
-category: packaging and distribution
+category: packaging
 alternatives: poetry, Flit
+???
+It builds packages in egg, zip or wheel format. Stores metadata. Standardizes the way you distribute code in Python. Wheel is better than egg. Wheel are universal and more portable, eggs are a weird beast that tends to break. Try to avoid eggs.
+---
+
+template: scale-5
+name: distutils
+
+category: packaging and distribution
+alternatives: -
+
+???
+Precursor to setuptools. Setuptools and other tools still make use of it internally. Some old projects still use it directly. Don't do it. You see this guy only in error messages and it happens more often than not.
 
 ---
+template: scale-1
+name: Pip
+
+category: distribution
+alternatives: Poetry, Conda
+???
+Install and uninstall stuff. It works most of the time.
+---
+template: scale-3
+name: Pypiserver
+
+category: distribution
+alternatives: Warehouse, djangopypi
+???
+Server software. To be used only to share code inside an organization
+---
+template: scale-3
+name: Pypi
+category: distribution
+alternatives: -
+???
+Official index
+---
+template: scale-2
+name: virtualenv
+
+category: environment
+alternatives: Containers(?), venv (basically the same but smarter)
+???
+Used to separate environments. used by many other tools behind the scenes. Cumbersome to use manually. Some people do it anyway (me, for example). Venv is a package that does the same job without copying binaries. 
+---
+template: scale-2
+name: pyenv
+
+category: environment
+alternatives: Containers
+???
+Used to isolate python versions in the same system. Allows to control the python version through the PYENV_VERSION environment variable or .python-version file. The rest is shell magic. Plugin pyenv-virtualenv makes it easier to use them in combination
+---
+
+
+template: scale-2
+name: Poetry
+
+category: packaging and distribution
+alternatives: Pipenv (partially)
+???
+
+Tries to reimplement most of the tooling in a single solution: environments, packaging, distribution, metadata, CLI ecc ecc. Far from perfect but mature enough to be used. Makes it harder to deviate from the documented path.
+
+---
+
+template: scale-3
+name: Pipenv
+
+category: environment
+alternatives: Poetry, pip-tools
+
+???
+Creates a Pipfile to manage the dependencies. More sane than requirements.txt. Basically Pip+virtualenv
+---
+
+template: scale-2
+name: tox
+
+category: environment
+alternatives: bash, CI pipelines
+
+???
+Allows to test a code base with different python versions and different environment configurations. Useful when your code needs to run in many different places
+
+---
+
+template: scale-3
+name: PyScaffold
+
+category: scaffolding
+alternatives: python-project-template, Cookiecutter
+
+???
+Creates project folder structures. Configurable and extendable. Includes a bunch of tools mentioned before and many others.
+
+
+
+
+---
+
 layout: false
 class: center, middle
 # Thanks! 
