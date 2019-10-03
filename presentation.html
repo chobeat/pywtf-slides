@@ -4,9 +4,6 @@
     <title>pyWTF</title>
     <meta charset="utf-8">
 <style>
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
-      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
       body {
         font-family: 'Droid Serif';
@@ -114,13 +111,18 @@
         float: right;
         padding-top: 1em;
       }
+      .black-scale{
+      color:black
+      }
+      .grey-scale{
+      color:lightgrey
+      }
 </style>
   
   </head>
   <body>
     <textarea id="source">
 
----
 class: center, middle
 
 # venv, pyenv, pypi, pip, pipenv, pyWTF?
@@ -160,13 +162,112 @@ class: center, middle
 .left-column[
 ## Study
 ## Work
-## Private Time
+## Personal Time
 ]
 .right-column[
-*#Admin of gambe.ro (italian only)
-Blogger on [write.as](https://write.as/simone-robutti/)
+# Coordinator of
+![Gambe.ro](gambero_resize.png)
 ]
-.
+.right[.footnote[*Only in Italian*]]
+
+---
+.left-column[
+## Study
+## Work
+## Personal Time
+]
+.right-column[
+
+#Blogger on 
+[![write.as](writeas-logo.png)](https://write.as/simone-robutti/)
+]
+---
+class: center, middle
+# Disclaimer!
+
+---
+class: center, middle
+
+# Python project tooling  is good until it breaks
+
+Stick to the beaten path
+.left-column[
+.footnote[*Really, it's .red[dangerous], there might be .red[bears] or something. Don't risk it.*]]
+
+---
+class: center, middle
+###**"Why the ?#@%$ are you broken now?"** 
+<br/>
+
+
+A totally scientific way of rating tools
+<br/>
+
+<br/>
+#.black-scale[*?#@*].grey-scale[*%$*]
+3 out of 5
+---
+name: tools
+layout:true
+#{{name}}
+
+Category: **{{category}}**
+
+Alternatives: {{alternatives}}
+---
+
+name: scale-1
+template:tools
+layout:true
+
+.black-scale[*?*].grey-scale[*#@%$*]
+
+---
+
+name: scale-2
+template:tools
+layout:true
+
+.black-scale[*?#*].grey-scale[*@%$*]
+
+---
+
+name: scale-3
+template:tools
+layout:true
+
+.black-scale[*?#@*].grey-scale[*%$*]
+
+---
+
+name: scale-4
+template:tools
+layout:true
+
+.black-scale[*?*#@%].grey-scale[*$*]
+
+---
+
+name: scale-5
+template:tools
+layout:true
+
+.black-scale[*?#@%$*]
+
+---
+
+template: scale-4
+name: setuptools
+
+category: packaging and distribution
+alternatives: poetry, Flit
+
+---
+layout: false
+class: center, middle
+# Thanks! 
+
+Bring out the questions
     </textarea>
     <script src="remark.min.js">
     </script>
