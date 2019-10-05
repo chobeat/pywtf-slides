@@ -353,7 +353,7 @@ Creates a Pipfile to manage the dependencies. More sane than requirements.txt. B
 template: scale-2
 name: tox
 
-category: environment
+category: environment and testing
 alternatives: bash, CI pipelines
 
 ???
@@ -370,10 +370,42 @@ alternatives: python-project-template, Cookiecutter
 ???
 Creates project folder structures. Configurable and extendable. Includes a bunch of tools mentioned before and many others.
 
+---
 
+template: scale-2
+name: Pytest
 
+category: testing
+alternatives: unittest, pyunit
+
+???
+Most common testing suite. Powerful tool, learn the advanced feature. Often breaks when using PyCharm (pytest-cov). Plugin system sometimes leads to weird behaviours (aiohttp)
 
 ---
+
+template: scale-1
+name: flake8
+
+category: linting
+alternatives: pylint, prospector
+
+???
+Linter, tells you what's wrong with your code. Conformity to PEP-8
+---
+
+template: scale-1
+name: Black
+
+category: formatter
+alternatives: autopep8, yapf
+
+???
+Autoformatter. Formats your code. Tries to limit the number of options to keep it simple
+
+---
+
+
+
 
 layout: false
 class: center, middle
