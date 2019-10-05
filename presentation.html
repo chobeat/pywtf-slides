@@ -111,11 +111,40 @@
         float: right;
       }
       .black-scale{
-      color:black
+      color:black;
+          font-size:4em;
       }
       .grey-scale{
-      color:lightgrey
+      color:lightgrey;
+          font-size:3em;
       }
+    .grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 30px;
+}
+
+.grid-container > div {
+  padding: 20px 0;
+  font-size: 20px;
+      text-align:left;
+          vertical-align:bottom;
+} 
+      .grid-container > div >h1{
+      
+             margin-top:0px; 
+      }
+      .grid-container > .left-tool{
+          text-align:left;
+      }
+      .grid-container > .right-tool{
+          text-align:right;
+      }
+      .upper-tool{
+      }
+      .lower-tool{
+      }
+
 </style>
   
   </head>
@@ -221,7 +250,7 @@ They are confusing, they are similar to each other.
 
 ---
 class: center, middle
-#.black-scale[*?#@*].grey-scale[*%$*]
+.black-scale[*?#@*].grey-scale[*%!*]
 
 3 cusses out of 5
 
@@ -240,50 +269,50 @@ A totally scientific rating system
 class: center, middle
 name: tools
 layout:true
-#{{name}}
+<div class="grid-container">
+<div class="upper-tool left-tool">
+    <h1>  {{name}}</h1>
+</div>
+<div class="upper-tool right-tool"></div>
 
-Category: **{{category}}**
-
-Alternatives: {{alternatives}}
-
-Rate:{{scale}}
+<div class="lower-tool left-tool">
+    Category: <b>{{category}}</b>
+    <p>Alternatives: {{alternatives}}</p>
+</div>
+<div class="lower-tool right-tool">
+Rate
+<br/>
+{{scale}}
+</div>
+</div>
 ---
 
 name: scale-1
 template:tools
 layout:true
-scale:.black-scale[*?*].grey-scale[*#@%$*]
-
+scale:<span class="black-scale">?</span><span class="grey-scale">#@%!</span>
 ---
 
 name: scale-2
 template:tools
 layout:true
-
-scale:.black-scale[*?#*].grey-scale[*@%$*]
-
+scale:<span class="black-scale">?@</span><span class="grey-scale">@%!</span>
 ---
-
 name: scale-3
 template:tools
 layout:true
-scale:.black-scale[*?#@*].grey-scale[*%$*]
-
+scale:<span class="black-scale">?@%</span><span class="grey-scale">%!</span>
 ---
-
 name: scale-4
 template:tools
 layout:true
-
-scale:.black-scale[*?*#@%].grey-scale[*$*]
-
+scale:<span class="black-scale">?#@%</span><span class="grey-scale">!</span>
 ---
 
 name: scale-5
 template:tools
 layout:true
-
-scale:.black-scale[*?#@%$*]
+scale:<span class="black-scale">?#@%!</span>
 
 ---
 
@@ -291,7 +320,7 @@ template: scale-4
 name: setuptools
 
 category: packaging
-alternatives: poetry, Flit
+alternatives: Poetry, Flit
 ???
 It builds packages in egg, zip or wheel format. Stores metadata. Standardizes the way you distribute code in Python. Wheel is better than egg. Wheel are universal and more portable, eggs are a weird beast that tends to break. Try to avoid eggs.
 ---
