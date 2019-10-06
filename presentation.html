@@ -293,12 +293,12 @@ scale:<span class="black-scale">?</span><span class="grey-scale">#@%!</span>
 name: scale-2
 template:tools
 layout:true
-scale:<span class="black-scale">?@</span><span class="grey-scale">@%!</span>
+scale:<span class="black-scale">?#</span><span class="grey-scale">@%!</span>
 ---
 name: scale-3
 template:tools
 layout:true
-scale:<span class="black-scale">?@%</span><span class="grey-scale">%!</span>
+scale:<span class="black-scale">?#@</span><span class="grey-scale">%!</span>
 ---
 name: scale-4
 template:tools
@@ -359,7 +359,7 @@ template: scale-2
 name: virtualenv
 
 category: environment
-alternatives: Containers(?), venv (basically the same but smarter)
+alternatives: Containers(?), venv
 ???
 Used to separate environments. used by many other tools behind the scenes. Cumbersome to use manually. Some people do it anyway (me, for example). Venv is a package that does the same job without copying binaries. 
 ---
@@ -409,10 +409,10 @@ template: scale-3
 name: PyScaffold
 
 category: scaffolding
-alternatives: python-project-template, Cookiecutter
+alternatives: Cookiecutter
 
 ???
-Creates project folder structures. Configurable and extendable. Includes a bunch of tools mentioned before and many others.
+Creates project folder structures. Configurable and extendable. Includes a bunch of tools mentioned before and many others. Other alternative: python-project-template: different selection of tools, but no automation.
 
 ---
 
