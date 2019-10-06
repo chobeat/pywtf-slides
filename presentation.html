@@ -21,7 +21,7 @@
         bottom: 3em;
       }
       li p { line-height: 1.25em; }
-      .red { color: #fa0000; }
+      .red { color: #3E16B4; }
       .large { font-size: 2em; }
       a, a > code {
         color: rgb(249, 38, 114);
@@ -111,15 +111,17 @@
         float: right;
       }
       .black-scale{
-      color:black;
-          font-size:4em;
+      color:#3E16B4;
+
+          font-size:2em;
       }
       .grey-scale{
-      color:lightgrey;
-          font-size:3em;
+      color:#A393FF;
+          font-size:1.7em;
       }
     .grid-container {
   display: grid;
+      margin-top:200px;
   grid-template-columns: auto auto;
   grid-gap: 30px;
 }
@@ -137,12 +139,11 @@
       .grid-container > .left-tool{
           text-align:left;
       }
-      .grid-container > .right-tool{
-          text-align:right;
-      }
-      .upper-tool{
-      }
-      .lower-tool{
+      
+      .second_row{
+          grid-column-start:1;
+              grid-column-end:3;
+
       }
 
 </style>
@@ -273,16 +274,12 @@ layout:true
 <div class="upper-tool left-tool">
     <h1>  {{name}}</h1>
 </div>
-<div class="upper-tool right-tool"></div>
-
 <div class="lower-tool left-tool">
     Category: <b>{{category}}</b>
     <p>Alternatives: {{alternatives}}</p>
 </div>
-<div class="lower-tool right-tool">
-Rate
-<br/>
-{{scale}}
+<div class="second_row">
+    <h2>Rate: {{scale}}</h2>
 </div>
 </div>
 ---
