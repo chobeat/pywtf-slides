@@ -200,7 +200,6 @@ class: center, middle
 
 .right[![Teraki](teraki_resize.png)]
 ]
-.right[.footnote[*We're hiring a .red[DevOps] and a .red[Senior Data Engineer*]]]
 ---
 .left-column[
 ##Info
@@ -233,7 +232,7 @@ class: center, middle
 ---
 class: center, middle
 
-# Python project tooling  is good until it breaks
+# Python project tools are good until they breaks
 
 Stick to the beaten path
 .left-column[
@@ -243,7 +242,7 @@ Explain the target. Explain the general idea of the talk: a list of pointers to 
 ---
 class: center, middle
 
-# Python tools have terrible names
+# Python tools have confusing names
 
 ???
 
@@ -253,14 +252,13 @@ They are confusing, they are similar to each other.
 class: center, middle
 .black-scale[*?#@*].grey-scale[*%!*]
 
-3 cusses out of 5
-
-
-<br/>
+3 WTF out of 5
 
 <br/>
 
-The **"Why the ?#@%$ are you broken now?"** scale
+<br/>
+
+The **"Why the ?#@%! are you broken now?"** scale
 
 A totally scientific rating system
 <br/>
@@ -333,7 +331,7 @@ Precursor to setuptools. Setuptools and other tools still make use of it interna
 
 ---
 template: scale-1
-name: Pip
+name: pip
 
 category: distribution
 alternatives: Poetry, Conda
@@ -341,7 +339,7 @@ alternatives: Poetry, Conda
 Install and uninstall stuff. It works most of the time.
 ---
 template: scale-3
-name: Pypiserver
+name: pypiserver
 
 category: distribution
 alternatives: Warehouse, djangopypi
@@ -349,7 +347,7 @@ alternatives: Warehouse, djangopypi
 Server software. To be used only to share code inside an organization
 ---
 template: scale-3
-name: Pypi
+name: pypi
 category: distribution
 alternatives: -
 ???
@@ -359,7 +357,7 @@ template: scale-2
 name: virtualenv
 
 category: environment
-alternatives: Containers(?), venv
+alternatives: containers(?), venv
 ???
 Used to separate environments. used by many other tools behind the scenes. Cumbersome to use manually. Some people do it anyway (me, for example). Venv is a package that does the same job without copying binaries. 
 ---
@@ -367,17 +365,17 @@ template: scale-2
 name: pyenv
 
 category: environment
-alternatives: Containers
+alternatives: containers
 ???
 Used to isolate python versions in the same system. Allows to control the python version through the PYENV_VERSION environment variable or .python-version file. The rest is shell magic. Plugin pyenv-virtualenv makes it easier to use them in combination
 ---
 
 
 template: scale-2
-name: Poetry
+name: poetry
 
 category: packaging and distribution
-alternatives: Pipenv (partially)
+alternatives: pipenv (partially)
 ???
 
 Tries to reimplement most of the tooling in a single solution: environments, packaging, distribution, metadata, CLI ecc ecc. Far from perfect but mature enough to be used. Makes it harder to deviate from the documented path.
@@ -385,10 +383,10 @@ Tries to reimplement most of the tooling in a single solution: environments, pac
 ---
 
 template: scale-3
-name: Pipenv
+name: pipenv
 
 category: environment
-alternatives: Poetry, pip-tools
+alternatives: poetry, pip-tools
 
 ???
 Creates a Pipfile to manage the dependencies. More sane than requirements.txt. Basically Pip+virtualenv
@@ -398,26 +396,14 @@ template: scale-2
 name: tox
 
 category: environment and testing
-alternatives: bash, CI pipelines
+alternatives: bash scripting, make, CI pipelines
 
 ???
 Allows to test a code base with different python versions and different environment configurations. Useful when your code needs to run in many different places
-
----
-
-template: scale-3
-name: PyScaffold
-
-category: scaffolding
-alternatives: Cookiecutter
-
-???
-Creates project folder structures. Configurable and extendable. Includes a bunch of tools mentioned before and many others. Other alternative: python-project-template: different selection of tools, but no automation.
-
 ---
 
 template: scale-2
-name: Pytest
+name: pytest
 
 category: testing
 alternatives: unittest, pyunit
@@ -437,6 +423,18 @@ alternatives: pylint, prospector
 Linter, tells you what's wrong with your code. Conformity to PEP-8
 ---
 
+
+template: scale-3
+name: pyscaffold
+
+category: scaffolding
+alternatives: Cookiecutter
+
+???
+Creates project folder structures. Configurable and extendable. Includes a bunch of tools mentioned before and many others. Other alternative: python-project-template: different selection of tools, but no automation.
+
+---
+
 template: scale-1
 name: Black
 
@@ -447,15 +445,15 @@ alternatives: autopep8, yapf
 Autoformatter. Formats your code. Tries to limit the number of options to keep it simple
 
 ---
-
-
-
-
 layout: false
 class: center, middle
 # Thanks! 
 
-Bring out the questions
+###Bring out the questions
+
+<br/>
+
+*Teraki is hiring a .red[Senior Data Engineer]. Ask me about it or contact me at simone.robutti@teraki.com *
     </textarea>
     <script src="remark.min.js">
     </script>
