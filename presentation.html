@@ -309,9 +309,10 @@ layout:true
     <h1>  {{name}}</h1>
 </div>
 <div class="lower-tool left-tool">
-    Category: <b>{{category}}</b>
-    <p>Alternatives: {{alternatives}}</p>
-</div>
+    Category: {{category}}
+    <p>Purpose: {{goal}}</p>
+<p>Alternatives: {{alternatives}}</p>
+    </div>
 <div class="second_row">
     <h2>Rate: {{scale}}</h2>
 </div>
@@ -350,8 +351,9 @@ scale:<span class="black-scale">?#@%!</span>
 template: scale-4
 name: setuptools
 
-category: packaging
+category: packaging and distribution
 alternatives: Poetry, Flit
+goal: create packages and install them (core)
 ???
 It builds packages in egg, zip or wheel format. Stores metadata. Standardizes the way you distribute code in Python. Wheel is better than egg. Wheel are universal and more portable, eggs are a weird beast that tends to break. Try to avoid eggs.
 ---
@@ -361,6 +363,7 @@ name: distutils
 
 category: packaging and distribution
 alternatives: -
+goal: just creates packages (core)
 
 ???
 Precursor to setuptools. Setuptools and other tools still make use of it internally. Some old projects still use it directly. Don't do it. You see this guy only in error messages and it happens more often than not.
@@ -371,29 +374,34 @@ name: pip
 
 category: distribution
 alternatives: Poetry, Conda
+goal: it installs stuff (core)
 ???
 Install and uninstall stuff. It works most of the time.
+---
+
+template: scale-3
+name: pypi
+category: distribution
+alternatives: -
+goal: this is where you find packages to install with Pip
+???
+Official index
 ---
 template: scale-3
 name: pypiserver
 
 category: distribution
 alternatives: Warehouse, djangopypi
+goal: this is where you keep packages you don't want to share
 ???
 Server software. To be used only to share code inside an organization
----
-template: scale-3
-name: pypi
-category: distribution
-alternatives: -
-???
-Official index
 ---
 template: scale-2
 name: virtualenv
 
 category: environment
 alternatives: containers(?), venv
+goal: creates Virtual Environments(core)
 ???
 Used to separate environments. used by many other tools behind the scenes. Cumbersome to use manually. Some people do it anyway (me, for example). Venv is a package that does the same job without copying binaries. 
 ---
@@ -402,20 +410,9 @@ name: pyenv
 
 category: environment
 alternatives: containers
+goal: juggles Python version for you
 ???
 Used to isolate python versions in the same system. Allows to control the python version through the PYENV_VERSION environment variable or .python-version file. The rest is shell magic. Plugin pyenv-virtualenv makes it easier to use them in combination
----
-
-
-template: scale-2
-name: poetry
-
-category: packaging and distribution
-alternatives: pipenv (partially)
-???
-
-Tries to reimplement most of the tooling in a single solution: environments, packaging, distribution, metadata, CLI ecc ecc. Far from perfect but mature enough to be used. Makes it harder to deviate from the documented path.
-
 ---
 
 template: scale-3
@@ -423,17 +420,30 @@ name: pipenv
 
 category: environment
 alternatives: poetry, pip-tools
-
+goal: creates per-project environments with dependencies
 ???
 Creates a Pipfile to manage the dependencies. More sane than requirements.txt. Basically Pip+virtualenv
 ---
 
+
+
+template: scale-2
+name: poetry
+
+category: packaging and distribution
+alternatives: pipenv (partially)
+goal: all the things
+???
+
+Tries to reimplement most of the tooling in a single solution: environments, packaging, distribution, metadata, CLI ecc ecc. Far from perfect but mature enough to be used. Makes it harder to deviate from the documented path.
+
+---
 template: scale-2
 name: tox
 
 category: environment and testing
 alternatives: bash scripting, make, CI pipelines
-
+goal: environments for testing
 ???
 Allows to test a code base with different python versions and different environment configurations. Useful when your code needs to run in many different places
 ---
@@ -443,7 +453,7 @@ name: pytest
 
 category: testing
 alternatives: unittest, pyunit
-
+goal: a test suite powered by Black Magic
 ???
 Most common testing suite. Powerful tool, learn the advanced feature. Often breaks when using PyCharm (pytest-cov). Plugin system sometimes leads to weird behaviours (aiohttp)
 
@@ -454,33 +464,33 @@ name: flake8
 
 category: linting
 alternatives: pylint, prospector
-
+goal: it tells you if your code is ugly
 ???
 Linter, tells you what's wrong with your code. Conformity to PEP-8
 ---
+template: scale-1
+name: Black
 
+category: formatter
+alternatives: autopep8, yapf
+goal: formatting stuff without bothering the programmer
+???
+Autoformatter. Formats your code. Tries to limit the number of options to keep it simple
+
+---
 
 template: scale-3
 name: pyscaffold
 
 category: scaffolding
 alternatives: Cookiecutter
-
+goal: create generic or customized projects with pre-configured tooling
 ???
 Creates project folder structures. Configurable and extendable. Includes a bunch of tools mentioned before and many others. Other alternative: python-project-template: different selection of tools, but no automation.
 
 ---
 
-template: scale-1
-name: Black
 
-category: formatter
-alternatives: autopep8, yapf
-
-???
-Autoformatter. Formats your code. Tries to limit the number of options to keep it simple
-
----
 layout: false
 class: center, middle
 # Thanks! 
