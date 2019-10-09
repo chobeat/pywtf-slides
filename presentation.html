@@ -293,13 +293,15 @@ class: middle
 * ###distribution
 * ###environment management
 * ###testing
-* ###linting
+* ###enforcing code style 
 
 ???
-Scope each one of them, the problems that are commonly faced.
+
+Packaging: put together code, metadata, extensions and deliver them in a single file (wheel, egg, zip). Distribution: share packages across different machines and environments
+Environment: separate dependencies in the same machine
+testing: pick up test files, select the tests to run
+style: formatting and linting, pep8
 ---
-
-
 class: center, middle
 
 ![error 1](error1.png)
@@ -309,6 +311,14 @@ class: left, middle
 ![error_2](error2.png)
 
 ---
+
+class: center, middle
+![venn](venn.png)
+
+???
+a talk of pointers. these are not suggestions, just tools you should be aware of and try in your projects and workflows
+---
+
 
 class: center, middle
 name: tools
@@ -382,7 +392,7 @@ template: scale-1
 name: pip
 
 category: distribution
-alternatives: Poetry, Conda
+alternatives: Poetry, anaconda
 goal: it installs stuff (core)
 ???
 Install and uninstall stuff. It works most of the time.
